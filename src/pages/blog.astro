@@ -1,5 +1,5 @@
 ---
-
+const pageTitle = "My Astro Blog"
 ---
 
 <html lang="en">
@@ -8,7 +8,7 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 		<style>
 			body{
 				background-color: #000000dd;
@@ -22,5 +22,11 @@
 	</head>
 	<body>
 		<h1>Blog everybody</h1>
+        <ul>
+			<li><a href="/posts/post-1">I <sup>st</sup> Post</a></li>
+			<li><a href="/posts/post-2">II<sup>nd</sup> Post</a></li>
+			<li><a href="/posts/post-3">III <sup>rd</sup> Post</a></li>
+
+		</ul>
 	</body>
 </html>

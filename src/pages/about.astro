@@ -1,6 +1,20 @@
 ---
+const pageTitle = "About Me";
+const identity = {
+  firstName: "Alok",
+  country: "India",
+  occupation: "Learner",
+  hobbies: ["photography", "Art Enthusiast", "Drawing"],
+};
 
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const validTrue = true;
+const happy = "somewhat";
+const finished = false;
+const goal = 3;
 ---
+
 
 <html lang="en">
 	<head>
@@ -8,7 +22,7 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 		<style>
 			body{
 				background-color: #000000dd;
@@ -22,13 +36,26 @@
 	</head>
 	<body>
 		<h1>
-            About Me
+            {pageTitle}
         </h1>
         <h2>
             Well so I came to know about this new tool named Astro.js and how it's better than some of the frameworks available in the market.
         </h2>
-        <p>
-            I already have a pretty good grasp about React. Hence Astro should be like going to the backyard after a renovation.
-        </p>
+        <p>Here are a few facts about me:</p>
+<ul>
+  <li>My name is {identity.firstName}.</li>
+  <li>I live in {identity.country} and I currently am just a {identity.occupation}.</li>
+  {identity.hobbies.length >= 2 &&
+    <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+  }
+</ul>
+<p>My skills are:</p>
+<ul>
+  {skills.map((skill) => <li>{skill}</li>)}
+</ul>
+
+{validTrue && <p>I'm {happy} happy to be learning Astro! </p>}
+{finished && <p>I finished the current tutorial. </p>}
+{goal === 3 ?<p>My Goal is to finish Astro in {goal} days.</p>:<p>My Goal is too flexible to be completed in {goal} days.</p>}
 	</body>
 </html>
